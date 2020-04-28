@@ -12,4 +12,8 @@ _____
 ![shell](https://user-images.githubusercontent.com/64311703/80489744-cf34ff00-894f-11ea-9aaf-a752a5bd1582.JPG)
 
 Добовление и просмотр видео находятся в режиме работы.
+
 Infoshell -> http://185.3.94.78:5000/%D0%92%D1%81%D1%91
+
+___
+Сайт написан на html, css, python flask, javascript.
