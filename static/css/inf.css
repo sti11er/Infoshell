@@ -1,0 +1,125 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
+  background-color: #FFFEFA;
+}
+
+.text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color:#022651;
+    line-height: 33px;
+    margin-left: 25px;
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.footer span, a {
+    color: #AAA;
+}
+
+@media(min-width: 992px) {
+    .text {
+        margin-left: 70px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .text {
+        margin-left: 25px;
+    }
+}
+
+
+@media(min-width: 768px) {
+    .main {
+        margin-top: 20vh;
+    }
+    .text {
+        margin-top: 40px;
+    }
+    #bg1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150px;
+        height: 144px;
+        background-image: url("bg-1.png");
+        background-size:     cover;
+        background-repeat:   no-repeat;
+        background-position: center center;
+    }
+
+    #bg2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 96px;
+        height: 120px;
+        background-image: url("bg-2.png");
+        background-size:     cover;
+        background-repeat:   no-repeat;
+        background-position: center center;
+    }
+}
+
+@media(max-width: 768px) {
+    .footer {
+      position: relative;
+      height: 20px;
+      line-height: 20px; 
+      margin-bottom: 100px;
+      font-size:14px;
+    }
+    #mc_embed_signup label {
+        margin-top: 20px;
+    }
+
+
+    #bg1 {
+        position: absolute;
+        top: 70%;
+        left: 0;
+        width: 135px;
+        height: 130px;
+        background-image: url("bg-1.png");
+        background-size:     cover;
+        background-repeat:   no-repeat;
+        background-position: center center;
+    }
+
+    
+    #bg2 {
+        position: absolute;
+        top: 60%;
+        right: 0;
+        width: 65px;
+        height: 81px;
+        background-image: url("bg-2.png");
+        background-size:     cover;
+        background-repeat:   no-repeat;
+        background-position: center center;
+    }
+
+    #bg3 {
+        left: 30%;
+    }
+
+    #mc_embed_signup input.button {
+        margin-top: 15px;
+        margin-bottom: 60px;
+    }
+}

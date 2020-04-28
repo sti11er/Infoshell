@@ -1,0 +1,99 @@
+body {
+    font-family: 'Helvetica';
+    padding: 20px;
+    border-color: #FFF9F9;
+}
+
+hr {
+    border-color: #E3E3E3;
+}
+#h1{
+    color: #343434;
+}
+.t_n{
+    font-size: 13px;
+}
+.name{
+    border: 10px solid #F8F8F8; /* Параметры границы */
+    background: #F8F8F8;
+    height: 70px;
+    border-width: 100%;
+}
+.content {
+    font-family:'Fira Sans', sans-serif;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+#h4{
+    font-family: 'Nunito', sans-serif;
+    color:#192D3A;
+    margin-left:67px;
+    margin-top: 12px;
+}
+textarea {
+    margin-top: 30px;
+}
+.inf{
+    font-family:"Noto Sans" sans-serif;
+    font-size:13px;
+}
+
+#img{
+    position:absolute;
+    margin-left:7px;
+}
+
+#like{
+    font-size:24px;
+    color:#606060;
+    margin-left: 25px;
+}
+#dislike{
+    font-size:24px;
+    color:#606060;
+    margin-left: 32px;
+}
+.perception{
+    border: 2px solid #E5E5EB; /* Параметры границы */
+    background: white;
+    border-radius: 2px;
+}
+#likes{
+    color:#606060;
+    margin-left: 30px;
+}
+#dislikes{
+    color:#606060;
+    margin-left: 51px;
+}
+#comment{
+    border-color:#E5E5EB;
+    border-width: 2px 2px 2px 2px;
+}
+#button{
+    background-color: #6590B6;
+    width: 100px;
+    height: 30px;
+    border-radius:3px;
+}
+#text_comment{
+    font-family:'Fira Sans', sans-serif;
+    padding: 20px;
+}
+#text_comment{
+    margin-top: 10px;
+    font-size: 22px;
+    line-height: 24px;
+    color: #444;
+}
+#views{
+    color:#606060;
+    margin-left: 45px;
+}
+#visit{
+    font-size:24px;
+    color:#606060;
+    margin-left: 39px;
+}
