@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS videos;
+DROP TABLE IF EXISTS registration;
+DROP TABLE IF EXISTS subscriptions;
+DROP TABLE IF EXISTS likes;
+DROP TABLE IF EXISTS dislikes;
+DROP TABLE IF EXISTS article;
+DROP TABLE IF EXISTS likes_article;
+DROP TABLE IF EXISTS dislikes_article;
+DROP TABLE IF EXISTS comment;
