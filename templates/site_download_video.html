@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>УВЕЛИЧЬ INFOSHELL</title>
+    <link rel="stylesheet" href="/static/img/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href= "/static/css/download.css">
+
+    <link rel="shortcut icon" href="/static/img/infoshell.png" type="image/png">
+</head>
+<body>
+    <img src="/static/img/infoshell.png" width="50" height="50" id="img">
+    <h1 id = "h1">Загрузка видео</h1>
+    <div class="content">
+        <form method ="POST" enctype="multipart/form-data">
+            <hr id = "hr">
+            <p id="alert">{{alert}}</p>
+            <input type="file" name="file" class="anketa" /><br/>
+            <input type="text" placeholder="Введите название канала" name="channel_name" class="anketa" /><br/>
+            <input type = 'text' placeholder = "Введите название" name = "headline" class="anketa"/><br/>
+            <select name="topic" id="topic" required> 
+                <option value="">Тема видео</option>
+                <option value="IT">IT</option>
+                <option value="Scientifically_populist">Научно популистские</option>
+                <option value="movies">Фильмы</option>
+                <option value="Design">Дезаин</option>
+                <option value="Physics">Физика</option>
+                <option value="Chemistry">Химия</option>
+                <option value="Geographic">География</option>
+                <option value="Geological">Геология</option>
+                <option value="Art">Искусствоведение</option>
+                <option value="Historical">История</option>
+                <option value="Cultural_science">Культурология</option>
+                <option value="Medical">Медицина</option>
+                <option value="Pedagogical">Педагогика</option>
+                <option value="Political">Политика</option>
+                <option value="Psychological">Психология</option>
+                <option value="Agricultural">Сельскохозяйство</option>
+                <option value="Sociological">Социология</option>
+                <option value="Equipment">Техника</option>
+                <option value="Pharmaceuticals">Фармацевтика</option>
+                <option value="Philology">Филология</option>
+                <option value="Philosophy">Философия</option>
+                <option value="Saving">Экономия</option>
+                <option value="Jurisdiction">Юрисдикция</option>
+                <option value="Music">Музыка</option>
+                <option value="Sculpture">Скульптура</option>
+                <option value="Sport">Спорт</option>
+                <option value="Hunting">Охота</option>
+                <option value="Tourism">Туризм</option>
+                <option value="Humor">Юмор</option>
+                <option value="Fishing">Рыбалка</option>
+                <option value="Literature">Литература</option>
+                <option value="TV_show">Телешоу</option>
+            </select><br>
+            <input type="text" name="description" class="anketa" placeholder="Введите описание"/><br/>
+            <input type="submit" value="Добавить" name="sab" id="button">
+            <p class = "inf">Нажимая «Добавить», вы подтверждаете, что прочитали и согласны с нашими</p>
+            <a href="http://185.3.94.78:5000/inf" class="inf">Условиями Пользования и Политикой Конфиденциальности.</a>
+        </form>
+    <div class="content">
+</body>
+</html>

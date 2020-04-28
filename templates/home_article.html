@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Infoshell</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href= "/static/css/home_article.css">
+    <link rel="shortcut icon" href="/static/img/infoshell.png" type="image/png">
+    <link rel="stylesheet" href="/static/img/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- jstz-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js'></script>
+    <!-- jquery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- js script -->
+    <script>
+      $(document).ready(function(){
+        $('.menu-btn').on('click', function(e) {
+          e.preventDefault();
+          $('.menu').toggleClass('menu_active');
+        });
+      });
+    </script>
+</head>
+
+<body>
+  <div class="name">
+    <img src="/static/img/infoshell.png" width="50" height="50" id="img">
+    <h3 id="h4">Infoshell</h3>
+  </div>
+  <div class="menu-block">
+    <a href="#" class= "menu-btn">
+      <span></span>
+    </a>
+    <nav class="menu">
+      <a class="a" href="http://185.3.94.78:5000/Всё"><i class="fa fa-home"></i></a>
+      <a class="a" href="http://185.3.94.78:5000/download_article"><i class="fa fa-download"></i></a>
+      <a class="a" href="http://185.3.94.78:5000/registation"><i class="fa fa-registered"></i></a>
+    </nav>
+  </div>
+  <ul class="search_topics">
+    <li><a class="links" href="http://185.3.94.78:5000/Всё">Всё</a></li>
+    <li><a class="links" href="http://185.3.94.78:5000/Лучшие">Лучшие</a></li>
+    <li><a class="links" href="http://185.3.94.78:5000/Природа">Природа</a></li>
+    <li><a class="links" href="http://185.3.94.78:5000/Научтоп">Научтоп</a></li>
+    <li><a class="links" href="http://185.3.94.78:5000/IT">IT</a></li>
+    <li><a class="links" href="http://185.3.94.78:5000/Искуство">Искуство</a></li>
+  </ul>
+  <hr>
+  
+  <div class="container">
+    <p id="choice_search_topics">{{topic}}</p>
+    <hr>
+    {% for i in range(records) %}
+      <p class="t_n">{{ result[names[i]][0] }}</p>
+      <a class="h1" href={{result[names[i]][2]}}>{{ names[i] }}</a><br>
+      <a href="#" class="t_n">{{ result[names[i]][3] }}</a><br><br>
+      {{ result[names[i]][1] }}<br>
+      <a href={{result[names[i]][2]}} class='link'><strong>...</strong></a><br>
+      <hr>
+      <i class='fa fa-thumbs-up' id='like'></i>
+      <i class='fa fa-thumbs-down' id='dislike'></i>
+      <i id='visit' class='fa fa-eye'></i><br>
+      <span id ='likes'>{{ result[names[i]][4] }}</span>
+      <span id ='dislikes'>{{ result[names[i]][5] }}</span>
+      <span id = 'views'>{{ result[names[i]][6] }}</span>
+      <hr>
+    {% endfor %}
+  </div> 
+</body>
+</html>

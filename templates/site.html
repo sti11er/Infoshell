@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- css-->
+		<link rel="stylesheet" type="text/css" href= "/static/css/site.css">
+		<link rel="stylesheet" href="/static/img/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="shortcut icon" href="/static/img/infoshell.png" type="image/png">
+		<!-- jquery -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<!-- js script -->
+		<script>
+			$(document).ready(function(){
+				$('.menu-btn').on('click', function(e) {
+					e.preventDefault();
+					$('.menu').toggleClass('menu_active');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input placeholder= "Введите запрос" id="input" size="40"/> <br/>
+		<video width="280" height="150" controls id ="video">
+  			<source src = {{filename}}>
+		</video>
+        {% if come_in == True %}
+    		<p id = "name_vidio">{{headline}}</p>
+    		<p id="visit">{{visits}} просмотров</p>
+    		<a href="#" id="like"><i class="fa fa-thumbs-up"></i></a>
+    		<a href="#" id="dislike"><i class="fa fa-thumbs-down"></i></a>
+    		<div>
+                <span id ="likes">{{likes}}</span>
+                <span id ="dislikes">{{dislikes}}</span>
+            </div>
+    		<hr>
+    		<img src="/static/img/next.png" width="70" height="70" class="round">
+    		<p id="name_kanal"><strong>{{channel_name}}</strong></p>
+    		<div>
+                <span id ="subscriptions">{{subs}}</span> <p id="sub">подписчиков</p>
+            </div>
+            <button id="btn-subscribe">ПОДПИСАТЬСЯ</button><br>
+        {% endif %}
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                // Вызывается когда документ полностью загружен
+
+                // Привязываем к нажатию на кнопку функцию
+                // К кнопке мы обращаемся по её id
+                $("#btn-subscribe").click(send_subscription);
+            });
+
+            function send_subscription() {
+                // Отправляем POST-запрос на сервер
+                $.ajax({
+                    method: "POST",
+                    url: "/subscribe",
+                    data: {
+                        "video_id": "123123",
+                    },
+                    success: function(data) {
+                        // Ответ получен
+                        // alert("Response:" + JSON.stringify(data));
+
+                        // Обновляем количество подписок
+                        // К span с количеством тоже по id обращаемся
+                        $("#subscriptions").text(data.subs);
+                    },
+                    error: function(e) {
+                        // Ошибка
+                        alert("ERROR: " + e);
+                    }
+                });
+            }
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#like").click(send_like);
+            });
+
+            function send_like() {
+                $.ajax({
+                    method: "POST",
+                    url: "/like",
+                    data: {
+                        "video_id": "123123",
+                    },
+                    success: function(data) {
+                        $("#likes").text(data.like);
+                    },
+                    error: function(e) {
+                        // Ошибка
+                        alert("ERROR: " + e);
+                    }
+                });
+            }
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#dislike").click(send_dislike);
+            });
+
+            function send_dislike() {
+                $.ajax({
+                    method: "POST",
+                    url: "/dislike",
+                    data: {
+                        "video_id": "123123",
+                    },
+                    success: function(data) {
+                        $("#dislikes").text(data.dis);
+                    },
+                    error: function(e) {
+                        // Ошибка
+                        alert("ERROR: " + e);
+                    }
+                });
+            }
+        </script>
+
+		<div class="menu-block">
+			<a href="#" class= "menu-btn">
+				<span></span>
+			</a>
+			<nav class="menu">
+				<a href="#"><i class="fa fa-home"></i></a>
+				<a href="http://185.3.94.78:5000/download"><i class="fa fa-download"></i></a>
+			</nav>
+		</div>
+		<hr id = "hr">
+		<p id = 'description'>{{description}}</p>
+	</body>
+</html>

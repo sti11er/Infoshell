@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Загрузка статьи</title>
+        <!-- css infoshell -->
+        <link rel="stylesheet" type="text/css" href= "/static/css/download_article.css">
+        <link rel="stylesheet" href="/static/img/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="/static/img/infoshell.png" type="image/png">
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!-- jquery -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <!-- js script -->
+        <script>
+            $(document).ready(function(){
+                $('.menu-btn').on('click', function(e) {
+                    e.preventDefault();
+                    $('.menu').toggleClass('menu_active');
+                });
+            });
+        </script>
+    </head>
+
+    <body class="body">
+        <img src="/static/img/infoshell.png" width="65" height="65" class="img">
+        <p id="name">Infoshell</p>
+        <div class="shadow-box">
+            <h1 id = "h1">Загрузка статьи</h1><br><br>
+            <p id = "alert">{{alert}}</p>
+            <div class="content">
+                <form method="POST">
+                    <p class="designation"><strong>Название</strong></p>
+                    <input type="text" name="name" class="input"><br>
+                    <p class="designation"><strong>Тема</strong></p>
+                    <select name="topic" class="input" required> 
+                        <option value=""></option>
+                        <option value="IT">IT</option>
+                        <option value="Mathematics">Математика</option>
+                        <option value="Scientifically_populist">Научно популистские</option>
+                        <option value="movies">Фильмы</option>
+                        <option value="Design">Дезаин</option>
+                        <option value="Painting">Живопись</option>
+                        <option value="Physics">Физика</option>
+                        <option value="Chemistry">Химия</option>
+                        <option value="Geographic">География</option>
+                        <option value="Geological">Геология</option>
+                        <option value="Art">Искусствоведение</option>
+                        <option value="Historical">История</option>
+                        <option value="Cultural_science">Культурология</option>
+                        <option value="Medical">Медицина</option>
+                        <option value="Pedagogical">Педагогика</option>
+                        <option value="Political">Политика</option>
+                        <option value="Psychological">Психология</option>
+                        <option value="Agricultural">Сельскохозяйство</option>
+                        <option value="Sociological">Социология</option>
+                        <option value="Equipment">Техника</option>
+                        <option value="Pharmaceuticals">Фармацевтика</option>
+                        <option value="Philology">Филология</option>
+                        <option value="Philosophy">Философия</option>
+                        <option value="Saving">Экономия</option>
+                        <option value="Jurisdiction">Юрисдикция</option>
+                        <option value="Music">Музыка</option>
+                        <option value="Biology">Биология</option>
+                        <option value="Sculpture">Скульптура</option>
+                        <option value="Sport">Спорт</option>
+                        <option value="Hunting">Охота</option>
+                        <option value="Tourism">Туризм</option>
+                        <option value="Humor">Юмор</option>
+                        <option value="Fishing">Рыбалка</option>
+                        <option value="Literature">Литература</option>
+                        <option value="TV_show">Телешоу</option>
+                        <option value="Quotes">Цитаты</option>
+                    </select>
+                    <p class="designation"><strong>Введите статью</strong></p>
+                    <textarea type="text" class="textarea" placeholder="Статья" name="article" ></textarea><br>
+                    <label for="agree" class="checkbox" tabindex="0">
+                        <input type="checkbox" class="checkbox__input" name="agree" id="agree" data-required="true" checked="">
+                        <span class="checkbox__label checkbox__label_top">
+                        <span class="checkbox__label-text">Я принимаю условия <a href="http://185.3.94.78:5000/inf" target="_blank">Пользовательского соглашения</a></span>
+                      </span>
+                    </label><br>
+                    <input type="submit" value="Добавить" name="sab" id="button">
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>

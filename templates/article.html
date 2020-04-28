@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Infoshell article</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href= "/static/css/article.css">
+    <link rel="shortcut icon" href="/static/img/infoshell.png" type="image/png">
+    <link rel="stylesheet" href="/static/img/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- jstz-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js'></script>
+    <!-- jquery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>alert('xss')</script>
+</head>
+
+<body>
+  <div class="name">
+    <img src="/static/img/infoshell.png" width="50" height="50" id="img">
+    <h3 id="h4">Infoshell</h3>
+  </div>
+  <hr>
+  <div class="container">
+    <p class="t_n">{{name_user}}</p>
+    <a href="#" class="t_n">{{topic}}</a>
+    <h1 id="h1">{{name}}</h2>
+    {{article | safe}}
+    <br>
+  </div>
+  {% if come_in == True %}
+    <div class="perception">
+      <i class="fa fa-thumbs-up" id="like"></i>
+      <i class="fa fa-thumbs-down" id="dislike"></i>
+      <i id="visit" class="fa fa-eye"></i>
+      <div>
+        <span id ="likes">{{likes}}</span>
+        <span id ="dislikes">{{dislikes}}</span>
+        <span id = 'views'>{{views}}</span>
+      </div>
+    </div><br>
+    <textarea type="text" placeholder="Коментарий" name="comment" id="comment" rows="3" cols="50"></textarea><br>
+    <input type="submit" value="Добавить" name="sab" id="button"><br>
+    <br>
+  {% endif %}
+  {% if come_in == False %}
+    <div class="perception">
+      <i class="fa fa-thumbs-up" id="like"></i>
+      <i class="fa fa-thumbs-down" id="dislike"></i>
+      <i id="visit" class="fa fa-eye"></i>
+      <div>
+        <span id ="likes">{{likes}}</span>
+        <span id ="dislikes">{{dislikes}}</span>
+        <span id = 'views'>{{views}}</span>
+      </div>
+    </div><br>
+  {% endif %}
+  <h3 id="com_inf">Комментарии</h3>
+  <hr>
+  <span id="text_comment">{{comment | safe}}</span>
+
+  {% if come_in == True %}
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#button").click(function(){
+          var comment = $("#comment").val();  
+          var tz = jstz.determine(); 
+          var timezone = tz.name();
+
+          $.ajax({
+            url: "http://185.3.94.78:5000/comment",
+            type: "POST",
+            data: {"comment": comment, "timezone": timezone},
+            success: function(data) {
+              //alert(JSON.stringify(data))
+              $("#text_comment").html(data.comment);
+            },
+            error: function(e) {
+              alert("ERROR: " + e);
+            }
+          });
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#like").click(send_subscription);
+      });
+
+      function send_subscription() {
+        $.ajax({
+          method: "POST",
+          url: "/like_article",
+          data: {
+              "video_id": "123123",
+          },
+          success: function(data) {
+            $("#likes").text(data.likes);
+          },
+          error: function(e) {
+            alert("ERROR: " + e);
+          }
+        });
+      }
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#dislike").click(send_dislike);
+        });
+
+        function send_dislike() {
+          $.ajax({
+            method: "POST",
+            url: "/dislike_article",
+            data: {
+                "video_id": "123123",
+            },
+            success: function(data) {
+              $("#dislikes").text(data.dislikes);
+            },
+            error: function(e) {
+              // Ошибка
+              alert("ERROR: " + e);
+            }
+        });
+      }
+    </script>
+  {% endif %}
+  
+</body>
+</html>

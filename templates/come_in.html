@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Вход</title>
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href= "/static/css/come_in.css">
+        <link rel="stylesheet" href="/static/img/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="/static/img/infoshell.png" type="image/png">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="body">
+        <img src="/static/img/infoshell.png" width="65" height="65" class="img">
+        <p id="name">Infoshell</p>
+        <div class="shadow-box">
+            <h1 id = "h1">Вход</h1><br>
+            <p id = "alert">{{alert}}</p>
+            <div class="content">
+                <form method="POST">
+                    <p class="designation"><strong>E-mail</strong></p>
+                    <input type="email"name="email" class="input">
+                    <p class="designation"><strong>Пароль</strong></p>
+                    <input type="password" name="pass" class="input"><br>
+                    <input type="submit" value="Войти" name="sab" id="button"><br>
+                    <a href="http://185.3.94.78:5000/registation" class="inf">Зарегистрируйтесь</a>
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>
