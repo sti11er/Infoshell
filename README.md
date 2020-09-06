@@ -13,7 +13,7 @@ _____
 
 Добовление и просмотр видео находятся в режиме работы.
 
-Infoshell -> https://infoshell.asdasddfasifjosda.com/%D0%92%D1%81%D1%91
+Infoshell -> https://infoshell.transcendent.app/%D0%92%D1%81%D1%91
 
 ___
 Сайт написан на html, css, python flask, javascript.
